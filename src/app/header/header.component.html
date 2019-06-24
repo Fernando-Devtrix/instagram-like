@@ -11,6 +11,22 @@
     </ul>
 
     <ul class="navbar-nav justify-content-end">
+     <!--  <li class="dropdown" *ngIf="isLoggedIn">
+        <a class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" href="javascript: void(0)">
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+        </ul> -->
+      <!-- </li> -->
+      <div class="btn-group">
+        <button type="button" class="btn text-muted dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="user-name-display">{{name}}</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <li><a class="dropdown-item" href="javascript:void(0)"><span class="user-title">Email: </span><span class="user-data">{{email}}</span></a></li>
+          <li><a class="dropdown-item" href="javascript:void(0)"><span class="user-title">Uid: </span><span class="user-data">{{uid}}</span></a></li>
+        </div>
+      </div>
   	  <li routerLinkActive="active" *ngIf="!isLoggedIn"><a class="nav-link" routerLink="/signup">Sign up</a></li>
       <li routerLinkActive="active" *ngIf="!isLoggedIn"><a class="nav-link" routerLink="/login">Login</a></li>
       <li *ngIf="isLoggedIn" (click)="onLogout()"><a class="nav-link" routerLink="#">Logout</a></li>
